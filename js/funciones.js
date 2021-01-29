@@ -10,7 +10,7 @@ const printTareas = function (pTareas) {
                 <h2 style='margin-right:200px; '>${tarea.name.toUpperCase()}</h2>
                 <button id='eliminar'>ELIMINAR</button>
                 </article>`
-
+                recorrerBotones()
 
                 break;
 
@@ -20,7 +20,7 @@ const printTareas = function (pTareas) {
                 <h2 style='margin-right:200px;'>${tarea.name.toUpperCase()}</h2>
                 <button id='eliminar'>ELIMINAR</button>
                 </article >`
-
+                recorrerBotones()
 
                 break;
 
@@ -30,7 +30,7 @@ const printTareas = function (pTareas) {
                 <h2 style='margin-right:200px;'>${tarea.name.toUpperCase()}</h2>
                 <button id='eliminar'>ELIMINAR</button>
                 </article>`
-
+                recorrerBotones()
 
 
                 break;
@@ -56,3 +56,24 @@ function filtarListaNombre(pNombre, pTareas) {
     return listaFiltradaNombre;
 }
 printTareas(tareas)
+
+function recorrerBotones() {
+
+    let borrar = document.querySelectorAll('#eliminar')
+    for (botonBorrar of borrar) {
+        botonBorrar.addEventListener('click', eliminarTarea)
+    }
+
+}
+function eliminarTarea(e) {
+    let article = e.target.parentNode;
+    let id = parseInt(e.target.parentNode.dataset.id)
+
+
+    article.parentNode.removeChild(article)
+
+    let position = tareas.findIndex(tarea => tarea.id == id)
+
+    tareas.splice(position, 1)
+
+}

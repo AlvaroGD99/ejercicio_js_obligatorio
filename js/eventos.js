@@ -54,7 +54,7 @@ function guardarTarea(e) {
 
                 let kk = { id: idJson, name: nombreTarea.value, prioridad: creacionTarea.value }
                 tareas.push(kk)
-
+                recorrerBotones()
                 break;
 
             case 'diaria':
@@ -66,7 +66,7 @@ function guardarTarea(e) {
 
                 let kkk = { id: idJson, name: nombreTarea.value, prioridad: creacionTarea.value }
                 tareas.push(kkk)
-
+                recorrerBotones()
                 break;
 
             case 'mensual':
@@ -78,7 +78,7 @@ function guardarTarea(e) {
 
                 let kkkk = { id: idJson, name: nombreTarea.value, prioridad: creacionTarea.value }
                 tareas.push(kkkk)
-
+                recorrerBotones()
                 break;
 
         }
