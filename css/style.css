@@ -43,3 +43,14 @@ body{
     display: flex;
     justify-content: center;
 }
+
+
+article{
+    margin: 1px 0 0 0;
+    display: flex; 
+    justify-content:space-between;
+   
+}
+article button{
+    background-color: tomato;
+}
