@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio_obligatorio_js</title>
+    <script src="js/datos.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+    <main>
+
+        <div class="crearTarea">
+            <input type="text" id='nombreTarea'>
+            <select name="" id="seleccionPrioridad" style="margin-bottom: 20px;">
+                <option value="">Selecciona una prioridad</option>
+                <option value="importante">IMPORTANTE</option>
+                <option value="diaria">DIARIA</option>
+                <option value="mensual">MENSUAL</option>
+
+            </select>
+            <button id='guardarTarea'>GUARDAR</button>
+        </div>
+        <div id='alerta'>
+            <h4>Rellena todos los campos</h4>
+        </div>
+        <div class="buscador">
+            <select name="" id="tipoPrioridad" style="margin-bottom: 20px;">
+                <option value="">Selecciona una prioridad</option>
+                <option value="importante">IMPORTANTE</option>
+                <option value="diaria">DIARIA</option>
+                <option value="mensual">MENSUAL</option>
+
+            </select>
+
+
+            <input type="text" id='nombre'>
+
+        </div>
+
+
+
+        <section id="tareas">
+
+
+        </section>
+    </main>
+
+    <script src="js/funciones.js"></script>
+    <script src="js/eventos.js"></script>
+
+</body>
+
+</html>
