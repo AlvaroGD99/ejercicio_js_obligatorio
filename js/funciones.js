@@ -3,40 +3,27 @@ let idJson = 0;
 const printTareas = function (pTareas) {
     sectionTareas.innerHTML = "";
     for (let tarea of pTareas) {
+        let color = '';
         switch (tarea.prioridad) {
             case 'importante':
-                idJson++;
-                sectionTareas.innerHTML += `<article style='background-color:beige' data-id='${idJson}'>
-                <h2 style='margin-right:200px; '>${tarea.name.toUpperCase()}</h2>
-                <button id='eliminar'>ELIMINAR</button>
-                </article>`
-                recorrerBotones()
-
+                color = 'beige'
                 break;
 
             case 'diaria':
-                idJson++;
-                sectionTareas.innerHTML += `<article style='background-color:lightblue' data-id='${idJson}'>
-                <h2 style='margin-right:200px;'>${tarea.name.toUpperCase()}</h2>
-                <button id='eliminar'>ELIMINAR</button>
-                </article >`
-                recorrerBotones()
-
+                color = 'lightblue'
                 break;
 
             case 'mensual':
-                idJson++;
-                sectionTareas.innerHTML += `<article style='background-color:lightgreen'data-id='${idJson}'>
-                <h2 style='margin-right:200px;'>${tarea.name.toUpperCase()}</h2>
-                <button id='eliminar'>ELIMINAR</button>
-                </article>`
-                recorrerBotones()
-
-
+                color = 'lightgreen'
                 break;
-
-
         }
+
+        idJson++
+        sectionTareas.innerHTML += `<article style='background-color:${color}'data-id='${idJson}'>
+        <h2 style='margin-right:200px;'>${tarea.name.toUpperCase()}</h2>
+        <button id='eliminar'>ELIMINAR</button>
+        </article>`
+        recorrerBotones()
 
     }
 }

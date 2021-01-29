@@ -43,44 +43,33 @@ function guardarTarea(e) {
     }
     else {
         div.style.display = 'none';
-
+        let color = '';
         switch (creacionTarea.value) {
             case 'importante':
-                idJson++;
-                sectionTareas.innerHTML += `<article style='background-color:beige' data-id='${idJson}'>
-                <h2 style='margin-right:200px; '>${nombreTarea.value.toUpperCase()}</h2>
-                <button id='eliminar'>ELIMINAR</button>
-                </article>`
+                color = 'beige'
 
-                let kk = { id: idJson, name: nombreTarea.value, prioridad: creacionTarea.value }
-                tareas.push(kk)
-                recorrerBotones()
                 break;
 
             case 'diaria':
-                idJson++;
-                sectionTareas.innerHTML += `<article style='background-color:lightblue' data-id='${idJson}'>
-                <h2 style='margin-right:200px;'>${nombreTarea.value.toUpperCase()}</h2>
-                <button id='eliminar'>ELIMINAR</button>
-                </article>`
+                color = 'lightblue'
 
-                let kkk = { id: idJson, name: nombreTarea.value, prioridad: creacionTarea.value }
-                tareas.push(kkk)
-                recorrerBotones()
                 break;
 
             case 'mensual':
-                idJson++;
-                sectionTareas.innerHTML += `<article style='background-color:lightgreen' data-id='${idJson}'>
-                <h2 style='margin-right:200px;'>${nombreTarea.value.toUpperCase()}</h2>
-                <button id='eliminar'>ELIMINAR</button>
-                </article>`
 
-                let kkkk = { id: idJson, name: nombreTarea.value, prioridad: creacionTarea.value }
-                tareas.push(kkkk)
-                recorrerBotones()
+                color = 'lightgreen'
                 break;
 
         }
+        idJson++;
+
+        sectionTareas.innerHTML += `<article style='background-color:${color}' data-id='${idJson}'>
+        <h2 style='margin-right:200px; '>${nombreTarea.value.toUpperCase()}</h2>
+        <button id='eliminar'>ELIMINAR</button>
+        </article>`
+
+        let kk = { id: idJson, name: nombreTarea.value, prioridad: creacionTarea.value }
+        tareas.push(kk)
+        recorrerBotones()
     }
 }
