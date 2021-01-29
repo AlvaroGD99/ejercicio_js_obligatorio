@@ -1,21 +1,32 @@
-const tareas = [
+let selectorTypeContact = document.querySelector("#tipoPrioridad");
+selectorTypeContact.addEventListener('change', getType);
 
-    {
-        id: 1,
-        name: 'Estudiar JS',
-        prioridad: 'importante',
+function getType(e) {
+    //todos los elementos de tipo formulario recojo su valor con la propiedad value
+    let tipo = e.target.value;
+    let lista = filtarLista(tipo, tareas)
+    if (tipo != "") {
+        printTareas(lista)
 
-    },
+    }
+    else {
+        printTareas(tareas)
+    }
 
-    {
-        id: 2,
-        name: 'Sacar al perro',
-        prioridad: 'diaria',
-    },
+}
 
-    {
-        id: 3,
-        name: 'Salir a comer',
-        prioridad: 'mensual',
-    },
-];
+let selectorTypeNombre = document.querySelector('#nombre')
+selectorTypeNombre.addEventListener('keyup', getTypeNombre);
+function getTypeNombre(e) {
+    //todos los elementos de tipo formulario recojo su valor con la propiedad value
+    let tipoNombre = e.target.value;
+    let lista = filtarListaNombre(tipoNombre, tareas)
+    if (tipoNombre != "") {
+        printTareas(lista)
+
+    }
+    else {
+        printTareas(tareas)
+    }
+
+}
